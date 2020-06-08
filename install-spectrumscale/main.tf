@@ -43,8 +43,8 @@ resource "vsphere_virtual_machine" "sps1" {
   resource_pool_id = data.vsphere_resource_pool.pool.id
   firmware = "bios"
   datastore_id = data.vsphere_datastore.datastore.id
-  num_cpus = 4
-  memory = 8192
+  num_cpus = 8
+  memory = 16384
   wait_for_guest_ip_timeout = 10
   network_interface {
     network_id = data.vsphere_network.network.id
@@ -55,7 +55,19 @@ resource "vsphere_virtual_machine" "sps1" {
   disk {
     label = "rootvolume"
     size  = "120"
-    thin_provisioned  = "true"
+    thin_provisioned  = "false"
+  }
+  disk {
+    label = "spsvolume1"
+    size  = "200"
+    thin_provisioned  = "false"
+    unit_number = 1
+  }
+  disk {
+    label = "spsvolume4"
+    size  = "50"
+    thin_provisioned  = "false"
+    unit_number = 2
   }
 }
 # --- Create VM Spectrum-Scale-Node2 --- #
@@ -66,8 +78,8 @@ resource "vsphere_virtual_machine" "sps2" {
   resource_pool_id = data.vsphere_resource_pool.pool.id
   firmware = "bios"
   datastore_id = data.vsphere_datastore.datastore.id
-  num_cpus = 4
-  memory = 8192
+  num_cpus = 8
+  memory = 16384
   wait_for_guest_ip_timeout = 10
   network_interface {
     network_id = data.vsphere_network.network.id
@@ -78,7 +90,19 @@ resource "vsphere_virtual_machine" "sps2" {
  disk {
     label = "rootvolume"
     size  = "120"
-    thin_provisioned  = "true"
+    thin_provisioned  = "false"
+  }
+ disk {
+    label = "spsvolume2"
+    size  = "200"
+    thin_provisioned  = "false"
+    unit_number = 1
+  }
+ disk {
+    label = "spsvolume5"
+    size  = "50"
+    thin_provisioned  = "false"
+    unit_number = 2
   }
 }
 # --- Create VM Spectrum-Scale-Node3 --- #
@@ -89,8 +113,8 @@ resource "vsphere_virtual_machine" "sps3" {
   resource_pool_id = data.vsphere_resource_pool.pool.id
   firmware = "bios"
   datastore_id = data.vsphere_datastore.datastore.id
-  num_cpus = 4
-  memory = 8192
+  num_cpus = 8
+  memory = 16384
   wait_for_guest_ip_timeout = 10
   network_interface {
     network_id = data.vsphere_network.network.id
@@ -101,6 +125,18 @@ resource "vsphere_virtual_machine" "sps3" {
   disk {
     label = "rootvolume"
     size  = "120"
-    thin_provisioned  = "true"
+    thin_provisioned  = "false"
+  }
+  disk {
+    label = "spsvolume3"
+    size  = "200"
+    thin_provisioned  = "false"
+    unit_number = 1
+  }
+  disk {
+    label = "spsvolume6"
+    size  = "50"
+    thin_provisioned  = "false"
+    unit_number = 2
   }
 }

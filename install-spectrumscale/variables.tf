@@ -26,33 +26,8 @@ variable "vm_folder" {
   default = "ocp43-patrick"
 }
 
-
-variable "master_guest_id_tag" {
-  default = "centos7_64Guest"
-#  default = "centos8_64Guest"
-#  default = "rhel7_64Guest"
-#  default = "rhel8_64Guest"
-#  default = "ubuntuGuest"
-#  default = "ubuntu64Guest"
-#  default = "coreos64Guest"
-}
-variable "worker_guest_id_tag" {
-#  default = "centos7_64Guest"
-#  default = "centos8_64Guest"
-#  default = "rhel7_64Guest"
-#  default = "rhel8_64Guest"
-#  default = "ubuntuGuest"
-#  default = "ubuntu64Guest"
-  default = "coreos64Guest"
-}
 variable "sps_guest_id_tag" {
   default = "centos7_64Guest"
-#  default = "centos8_64Guest"
-#  default = "rhel7_64Guest"
-#  default = "rhel8_64Guest"
-#  default = "ubuntuGuest"
-#  default = "ubuntu64Guest"
-#  default = "coreos64Guest"
 }
 
 # vcenter-objects
