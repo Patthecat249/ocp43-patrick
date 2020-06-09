@@ -35,7 +35,7 @@ variable "ocp-folder" {
   default = "/dc-home/vm/ocp43-patrick"
 }
 
-h --- Create VM OCP-RHEL-Bastion-Host --- #
+# --- Create VM OCP-RHEL-Bastion-Host --- #
 resource "vsphere_virtual_machine" "ocp-rhel-bastion-host" {
   name = var.vm_name_ocp-bastion-host
   folder = var.ocp-folder
