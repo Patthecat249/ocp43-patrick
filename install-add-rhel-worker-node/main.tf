@@ -35,7 +35,11 @@ variable "ocp-folder" {
   default = "/dc-home/vm/ocp43-patrick"
 }
 
-# --- Create Addiontal VM OCP-Worker#4 --- #
+variable "vm_name_ocp-worker4" {
+  default = "ocp-worker4"
+}
+
+# --- Create Addiontal VM OCP-Worker#3 --- #
 resource "vsphere_virtual_machine" "ocp-worker4" {
   name = var.vm_name_ocp-worker4
   folder = var.ocp-folder
@@ -43,8 +47,8 @@ resource "vsphere_virtual_machine" "ocp-worker4" {
   resource_pool_id = data.vsphere_resource_pool.pool.id
   firmware = "bios"
   datastore_id = data.vsphere_datastore.datastore.id
-  num_cpus = 4
-  memory = 8192
+  num_cpus = 8
+  memory = 16384
   wait_for_guest_ip_timeout = 10
   network_interface {
     network_id = data.vsphere_network.network.id

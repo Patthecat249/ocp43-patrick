@@ -41,7 +41,7 @@ resource "vsphere_virtual_machine" "ocp-registry-host" {
   folder = var.ocp-folder
   guest_id = var.master_guest_id_tag
   resource_pool_id = data.vsphere_resource_pool.pool.id
-  firmware = "efi"
+  firmware = "bios"
   datastore_id = data.vsphere_datastore.datastore.id
   num_cpus = 2
   memory = 4096
