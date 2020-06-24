@@ -31,7 +31,7 @@ variable "vm_name_ocp-bootstrap-node" {
   default = "ocp-bootstrap-node"
 }
 variable "vm_name_ocp-bastion-host" {
-  default = "ocp-bastion1"
+  default = "ocp-bastion"
 }
 
 variable "vm_folder" {
