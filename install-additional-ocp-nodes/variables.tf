@@ -30,6 +30,9 @@ variable "vm_name_ocp-worker2" {
 variable "vm_name_ocp-worker3" {
   default = "ocp-worker3"
 }
+variable "vm_name_ocp-worker4" {
+  default = "ocp-worker4"
+}
 variable "vm_name_ocp-bootstrap-node" {
   default = "ocp-bootstrap-node"
 }

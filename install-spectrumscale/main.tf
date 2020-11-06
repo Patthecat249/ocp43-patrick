@@ -43,8 +43,8 @@ resource "vsphere_virtual_machine" "sps1" {
   resource_pool_id = data.vsphere_resource_pool.pool.id
   firmware = "bios"
   datastore_id = data.vsphere_datastore.datastore.id
-  num_cpus = 8
-  memory = 16384
+  num_cpus = 4
+  memory = 8192
   wait_for_guest_ip_timeout = 10
   network_interface {
     network_id = data.vsphere_network.network.id
@@ -78,8 +78,8 @@ resource "vsphere_virtual_machine" "sps2" {
   resource_pool_id = data.vsphere_resource_pool.pool.id
   firmware = "bios"
   datastore_id = data.vsphere_datastore.datastore.id
-  num_cpus = 8
-  memory = 16384
+  num_cpus = 4
+  memory = 8192
   wait_for_guest_ip_timeout = 10
   network_interface {
     network_id = data.vsphere_network.network.id
@@ -113,8 +113,8 @@ resource "vsphere_virtual_machine" "sps3" {
   resource_pool_id = data.vsphere_resource_pool.pool.id
   firmware = "bios"
   datastore_id = data.vsphere_datastore.datastore.id
-  num_cpus = 8
-  memory = 16384
+  num_cpus = 4
+  memory = 8192
   wait_for_guest_ip_timeout = 10
   network_interface {
     network_id = data.vsphere_network.network.id

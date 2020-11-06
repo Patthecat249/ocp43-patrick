@@ -43,14 +43,38 @@ resource "vsphere_virtual_machine" "ocp-worker3" {
   resource_pool_id = data.vsphere_resource_pool.pool.id
   firmware = "bios"
   datastore_id = data.vsphere_datastore.datastore.id
-  num_cpus = 8
+  num_cpus = 16
   memory = 16384
   wait_for_guest_ip_timeout = 10
   network_interface {
     network_id = data.vsphere_network.network.id
     adapter_type = "vmxnet3"
     use_static_mac = true
-    mac_address = "00:50:56:a6:0f:ff"
+    mac_address = "00:50:56:a6:0f:13"
+  }
+  disk {
+    label = "rootvolume"
+    size  = "120"
+    thin_provisioned  = "true"
+    unit_number = 0
+  }
+}
+# --- Create Addiontal VM OCP-Worker#4 --- #
+resource "vsphere_virtual_machine" "ocp-worker4" {
+  name = var.vm_name_ocp-worker4
+  folder = var.ocp-folder
+  guest_id = var.master_guest_id_tag
+  resource_pool_id = data.vsphere_resource_pool.pool.id
+  firmware = "bios"
+  datastore_id = data.vsphere_datastore.datastore.id
+  num_cpus = 16
+  memory = 16384
+  wait_for_guest_ip_timeout = 10
+  network_interface {
+    network_id = data.vsphere_network.network.id
+    adapter_type = "vmxnet3"
+    use_static_mac = true
+    mac_address = "00:50:56:a6:0f:14"
   }
   disk {
     label = "rootvolume"
